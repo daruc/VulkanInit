@@ -46,6 +46,7 @@ int main(int argc, char *args[]) {
 		engine.render();
 	}
 
+	engine.cleanUp();
 	SDL_DestroyWindow(window);
 
 	SDL_Quit();
