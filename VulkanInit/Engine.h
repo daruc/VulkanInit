@@ -33,6 +33,7 @@ private:
 	VkFormat m_vkSwapchainImageFormat;
 	VkExtent2D m_vkSwapchainExtent;
 	std::vector<const char*> m_deviceExtensions;
+	VkPipelineLayout m_vkPipelineLayout;
 
 	void initVkInstance();
 	void createVkSurface();
@@ -40,6 +41,8 @@ private:
 	void createDevice();
 	void createSwapChain();
 	void createSwapChainImageViews();
+	void createGraphicsPipeline();
+	VkShaderModule loadShader(const char* fileName);
 	QueueFamilyIndices findQueueFamilyIndices(VkPhysicalDevice physicalDevice);
 	SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice physicalDevice);
 	VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& formats);
