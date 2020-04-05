@@ -31,17 +31,21 @@ private:
 	std::vector<VkImage> m_vkSwapchainImages;
 	VkFormat m_vkSwapchainImageFormat;
 	VkExtent2D m_vkSwapchainExtent;
+	std::vector<const char*> m_deviceExtensions;
 
 	void initVkInstance();
 	void createVkSurface();
 	void pickPhysicalDevice();
 	void createDevice();
 	void createSwapChain();
-	QueueFamilyIndices findQueueFamilyIndices();
-	SwapChainSupportDetails querySwapChainSupport();
+	QueueFamilyIndices findQueueFamilyIndices(VkPhysicalDevice physicalDevice);
+	SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice physicalDevice);
 	VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& formats);
 	VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& presentModes);
 	VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
+	bool checkDeviceExtensionSupport(VkPhysicalDevice physicalDevice);
+	bool checkSwapchainSupport(VkPhysicalDevice physicalDevice);
+	bool checkQueueFamiliesSupport(VkPhysicalDevice physicalDevice);
 	
 public:
 	void init(struct SDL_Window* sdlWindow);
