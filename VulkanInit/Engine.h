@@ -33,7 +33,9 @@ private:
 	VkFormat m_vkSwapchainImageFormat;
 	VkExtent2D m_vkSwapchainExtent;
 	std::vector<const char*> m_deviceExtensions;
+	VkRenderPass m_vkRenderPass;
 	VkPipelineLayout m_vkPipelineLayout;
+	VkPipeline m_vkPipeline;
 
 	void initVkInstance();
 	void createVkSurface();
@@ -41,6 +43,7 @@ private:
 	void createDevice();
 	void createSwapChain();
 	void createSwapChainImageViews();
+	void createRenderPass();
 	void createGraphicsPipeline();
 	VkShaderModule loadShader(const char* fileName);
 	QueueFamilyIndices findQueueFamilyIndices(VkPhysicalDevice physicalDevice);
