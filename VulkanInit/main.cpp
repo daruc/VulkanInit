@@ -2,7 +2,7 @@
 #include "Engine.h"
 #include <iostream>
 
-int main(int argc, char *args[]) {
+int main(int argc, char* args[]) {
 
 	SDL_Init(SDL_INIT_VIDEO);
 
